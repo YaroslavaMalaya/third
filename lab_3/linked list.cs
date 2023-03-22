@@ -49,12 +49,48 @@ public class linked_list
 
         public void RemoveByKey(string key)
         {
-            // remove pair with provided key
+            LinkedListNode current = _first;
+            LinkedListNode previous = null;
+            
+            while (current != null)
+            {
+                if (current.Pair.Key == key)
+                {
+                    if (previous == null)
+                    {
+                        _first = current.Next; //видалення першого вузла
+
+                    }
+                    else
+                    {
+                        previous.Next = current.Next;// видалення не першого вузла
+                    }
+
+                    if (current == _last)
+                    {
+                        _last = previous; //оновити посилання на останній вузол, якщо необхідно
+                    }
+
+                    break; // вихід із циклу після першого знайденого збігу
+                }
+                previous = current;
+                current = current.Next;// перехід до наступного вузла
+            }
         }
 
-        /*public KeyValuePair GetItemWithKey(string key)
+        public KeyValuePair GetItemWithKey(string key)
         {
-            // get pair with provided key, return null if not found
-        } */
+            LinkedListNode current = _first;
+            while (current!=null)
+            {
+                if (current.Pair.Key == key)
+                {
+                    return current.Pair;// повертає перший знайдений збіг
+                }
+                current = current.Next;
+            }
+
+            return null;
+        }
     }
 }
