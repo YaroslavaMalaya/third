@@ -70,7 +70,7 @@ public class StringsDictionary
         var power = 1;
         foreach (char element in key)
         {
-            number = (int) Math.Pow(element, power); // проосить вказати що це саме int 
+            number += (int) Math.Pow(element, power); // проосить вказати що це саме int 
             power++;
         }
         var hash = (int) (Int64.Abs(number) % _buckets.Length); 
