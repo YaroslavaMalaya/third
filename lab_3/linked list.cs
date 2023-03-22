@@ -30,10 +30,21 @@ public class linked_list
     public class LinkedList
     {
         private LinkedListNode _first;
+        private LinkedListNode _last;
 
         public void Add(KeyValuePair pair)
         {
-            // add provided pair to the end of the linked list
+            LinkedListNode node = new LinkedListNode(pair);
+            if (_first == null)
+            {
+                _first = node;
+                _last = node;
+            }
+            else
+            {
+                _last.Next = node;
+                _last = node;
+            }
         }
 
         public void RemoveByKey(string key)
