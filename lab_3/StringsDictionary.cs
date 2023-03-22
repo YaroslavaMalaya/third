@@ -25,7 +25,6 @@ public class StringsDictionary
         {
             _buckets[hash] = new LinkedList<KeyValuePair>();
         }
-        
         _buckets[hash].AddLast(new KeyValuePair(key, value)); //  потім замінити AddLast на наш Add
     }
 
@@ -37,7 +36,7 @@ public class StringsDictionary
             return;
         }
 
-        var head = _buckets[hash].First;
+        var head = _buckets[hash].First; // замінити потім на наш _first
         while (head != null)
         {
             if (head.Value.Key == key)
@@ -62,19 +61,20 @@ public class StringsDictionary
                 }
             }
         }
-        
         return "This word doesn't exist in the dictionary :(";
     }
     
     private int CalculateHash(string key)
     {
         var number = 1;
+        var power = 1;
         foreach (char element in key)
         {
-            //number++;
-            number *= element;
+            number = (int) Math.Pow(element, power); // проосить вказати що це саме int 
+            power++;
         }
-        var hash = Int32.Abs(number) % _buckets.Length; // беру по модулю (Abs), бо іноді з мінусом виходить
+        var hash = (int) (Int64.Abs(number) % _buckets.Length); 
+        // беру по модулю (Abs), бо іноді з мінусом виходить, 64 бо number буже велике число
         return hash;
     }
 }

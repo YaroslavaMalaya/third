@@ -1,13 +1,20 @@
 ﻿using lab_3;
 
 var dictionary = new StringsDictionary();
+
+// перевірити як працює хешування, потім видалемо 
 dictionary.Add("Hello", "Hi");
 dictionary.Add("Goodbye", "Bye");
 Console.WriteLine(dictionary.Get("Hello"));
 Console.WriteLine(dictionary.Get("Goodbye"));
 
-// read all lines in the file and put all words and explanations in the dictionary;
-// File.ReadAllLines(pathToFile);
+var lines = File.ReadAllLines("dictionary.txt");
+foreach (var line in lines)
+{
+    string[] elements = line.Split("; ");
+    var key = elements[0];
+    var value = String.Join("; ", elements[1..]);
+}
 
 while (true)
 {

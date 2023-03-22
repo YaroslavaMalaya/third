@@ -41,9 +41,9 @@ public class linked_list
             // remove pair with provided key
         }
 
-        public KeyValuePair GetItemWithKey(string key)
+        /*public KeyValuePair GetItemWithKey(string key)
         {
             // get pair with provided key, return null if not found
-        }
+        } */
     }
 }
