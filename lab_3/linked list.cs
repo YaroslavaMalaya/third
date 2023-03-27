@@ -1,3 +1,5 @@
+using System.Collections;
+
 namespace lab_3;
 
 public class KeyValuePair
