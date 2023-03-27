@@ -8,6 +8,17 @@ public class StringsDictionary
     
     public void Add(string key, string value)
     {
+        var bucketsLength = _buckets.Length;
+        var full = 0;
+        foreach (var node in _buckets)
+        {    if (node != null)
+            {       
+                full++;
+            }
+            
+        }
+        var loadFactor = full/bucketsLength;
+        
         var hash = CalculateHash(key);
         if (_buckets[hash] == null)
         {

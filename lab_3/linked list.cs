@@ -26,7 +26,7 @@ public class LinkedListNode
     }
 }
 
-public class linked_list
+public class linked_list : IEnumerable
 {
 
     private LinkedListNode _first;
@@ -92,5 +92,19 @@ public class linked_list
 
         return null;
     }
-  
+
+    public IEnumerator GetEnumerator()
+    {
+        LinkedListNode current = _first;
+        while (current != null)
+        {
+            yield return current.Pair;
+            current = current.Next;
+        }
+    }
+
+    IEnumerator IEnumerable.GetEnumerator()
+    {
+        return GetEnumerator();
+    }
 }
