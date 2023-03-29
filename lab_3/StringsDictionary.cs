@@ -42,6 +42,14 @@ public class StringsDictionary
         {
             _buckets[hash] = new linked_list();
         }
+
+        foreach (KeyValuePair pair in _buckets[hash])
+        {
+            if (pair.Key == key)
+            {
+                _buckets[hash].RemoveByKey(key);
+            }
+        }
         _buckets[hash].Add(new KeyValuePair(key, value));
     }
 
@@ -60,8 +68,12 @@ public class StringsDictionary
         var hash = CalculateHash(key, _buckets.Length);
         if (_buckets[hash] != null)
         {
-            var value = _buckets[hash].GetItemWithKey(key).Value;
-            return value;
+            if (_buckets[hash].GetItemWithKey(key) != null)
+            {
+                var value = _buckets[hash].GetItemWithKey(key).Value;
+                return value;
+            }
+            return "This word doesn't exist in the dictionary :(";
         }
         
         return "This word doesn't exist in the dictionary :(";
@@ -79,5 +91,22 @@ public class StringsDictionary
         var hash = (int) (Int64.Abs(number) % bucketsLength); 
         // беру по модулю (Abs), бо іноді з мінусом виходить, 64 бо number буже велике число
         return hash;
+    }
+    
+    public bool Contains(string key) // частинка для додаткового від Влада
+    {
+        var hash = CalculateHash(key, _buckets.Length);
+        if (_buckets[hash] != null)
+        {
+            foreach (KeyValuePair element in _buckets[hash])
+            {
+                if (element.Key == key)
+                {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }

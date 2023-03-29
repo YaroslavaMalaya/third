@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/Users/Kristina/.nuget/packages/": {}
+    "/Users/Yarrochka/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Kristina/RiderProjects/third/lab_3/lab_3.csproj",
+      "projectUniqueName": "/Users/Yarrochka/Мої файли/Study/IT 3/third_3/lab_3/lab_3.csproj",
       "projectName": "lab_3",
-      "projectPath": "/Users/Kristina/RiderProjects/third/lab_3/lab_3.csproj",
-      "packagesPath": "/Users/Kristina/.nuget/packages/",
-      "outputPath": "/Users/Kristina/RiderProjects/third/lab_3/obj/",
+      "projectPath": "/Users/Yarrochka/Мої файли/Study/IT 3/third_3/lab_3/lab_3.csproj",
+      "packagesPath": "/Users/Yarrochka/.nuget/packages/",
+      "outputPath": "/Users/Yarrochka/Мої файли/Study/IT 3/third_3/lab_3/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/Kristina/.nuget/NuGet/NuGet.Config"
+        "/Users/Yarrochka/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/Users/Kristina/.dotnet/sdk/7.0.200/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/Users/Yarrochka/.dotnet/sdk/7.0.101/RuntimeIdentifierGraph.json"
       }
     }
   }

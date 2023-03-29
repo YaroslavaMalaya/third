@@ -73,7 +73,7 @@ public class linked_list : IEnumerable
                     _last = previous; //оновити посилання на останній вузол, якщо необхідно
                 }
 
-                break; // вихід із циклу після першого знайденого збігу
+                //break; // вихід із циклу після першого знайденого збігу
             }
             previous = current;
             current = current.Next;// перехід до наступного вузла
